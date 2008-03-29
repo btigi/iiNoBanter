@@ -1,0 +1,7 @@
+IF
+  Global("iiNoBanter","GLOBAL",0)
+THEN
+  RESPONSE #100
+    BanterBlockFlag(TRUE)
+    SetGlobal("iiNoBanter","GLOBAL",1)
+END

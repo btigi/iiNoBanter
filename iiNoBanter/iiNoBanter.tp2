@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------------------------------------------------------------
+// Name:   iiNoBanter
+// Author: igi
+// Date:   2008/03/29
+// -----------------------------------------------------------------------------------------------------------------------*/
+BACKUP ~iiNoBanter/backup~
+AUTHOR ~igi~
+ASK_EVERY_COMPONENT
+
+LANGUAGE ~English~ ~English~ ~iiNoBanter/Languages/English/setup.tra~
+
+
+//!----------------------------------------------------------------------------
+// Readme stuff
+//!----------------------------------------------------------------------------
+// Some people like to view the readme at the start
+BEGIN @1005
+NO_LOG_RECORD
+DESIGNATED 900
+SUBCOMPONENT @1000
+  AT_INTERACTIVE_NOW ~VIEW iiNoBanter/Readme/%LANGUAGE%/Readme-iiNoBanter.txt~
+
+
+// Some people like to view the readme at the end
+BEGIN @1010
+NO_LOG_RECORD
+DESIGNATED 1000
+SUBCOMPONENT @1000
+  AT_INTERACTIVE_EXIT ~VIEW iiNoBanter/Readme/%LANGUAGE%/Readme-iiNoBanter.txt~
+
+
+// And some people don't like to view the readme at all
+BEGIN @1020
+DESIGNATED 2000
+NO_LOG_RECORD
+SUBCOMPONENT @1000
+  // Do nothing
+
+
+// ------------------------------------------------------------------------------------------------------------------------
+// No Banter
+BEGIN @1 DESIGNATED 5000
+
+  COMPILE ~iiNoBanter/baf/no_banter.baf~

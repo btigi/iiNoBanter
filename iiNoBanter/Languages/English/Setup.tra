@@ -1,0 +1,14 @@
+@1 = ~No Banter~
+
+@100 = ~View Readme~
+@101 = ~Show readme after installation~
+@102 = ~Do not show readme after installation~
+
+// Readme
+@1000 = ~View Readme~
+@1005 = ~View readme file now~
+@1010 = ~View readme file after installation~
+@1020 = ~Do not view readme file~
+
+@10000 = ~This component has been deprecated~
+@10001 = ~Component not suitable for this game~
