@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------------------------------------------------------
 // Name:   iiNoBanter
 // Author: igi
-// Date:   2008/03/29
+// Date:   2008/04/01
 // -----------------------------------------------------------------------------------------------------------------------*/
 BACKUP ~iiNoBanter/backup~
 AUTHOR ~igi~
@@ -41,4 +41,17 @@ SUBCOMPONENT @1000
 // No Banter
 BEGIN @1 DESIGNATED 5000
 
-  COMPILE ~iiNoBanter/baf/no_banter.baf~
+COPY_EXISTING_REGEXP GLOB ~^.+\.dlg$~ ~override~
+    DECOMPILE_DLG_TO_D
+      REPLACE_TEXTUALLY ~I[fs]ValidForPartyDialog\(ue\)?(Player\([2-6]\))~ ~I[fs]ValidForPartyDialog\(ue\)?(Player\([2-6]\)) False()~
+    COMPILE_D_TO_DLG
+    IF ~ValidForPartyDialog~
+    BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.bcs$~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~I[fs]ValidForPartyDialog\(ue\)?.*$~
+                      ~False()~
+  COMPILE_BAF_TO_BCS
+  IF ~16552~
+  BUT_ONLY_IF_IT_CHANGES
