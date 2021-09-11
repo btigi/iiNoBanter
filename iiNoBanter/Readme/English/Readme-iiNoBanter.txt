@@ -1,5 +1,5 @@
-iiNoBanter 2.00
----------------
+iiNoBanter 2.1
+--------------
 
 +) Contents
 ===========
@@ -41,6 +41,9 @@ A future version of the mod would disable banters only in certain area types (e.
 
 +) Section 5. Version History
 =============================
+V2.1 [2021/09/11]
+  - Maintenance release RE: mod packaging
+
 V2 [2008/04/01]
   - Complete rewrite
 
